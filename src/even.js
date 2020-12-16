@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userName } from './cli';
+import { userName } from './cli.js';
 
 export const isEven = (num) => {
   if (num % 2 === 0) {
@@ -20,8 +20,9 @@ export const brainEvenGame = () => {
       counter += 1;
       console.log('Correct!');
     } else {
-      return `'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(questionNumber)}'.\nLet's try again, ${userName}!`);
+      return;
     }
   }
-  return `Congratulations, ${userName}`;
+  console.log(`Congratulations, ${userName}!`);
 };
