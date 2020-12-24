@@ -6,8 +6,8 @@
 
 Brain games it's a simple cli game to install this one please use next command: <br>
 ```git clone``` <br>
-npm install <br>
-npm link <br>
+```npm install``` <br>
+```npm link``` <br>
 Next please choose one of the game <br>
 Example game play: <br>
 
