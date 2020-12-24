@@ -1,18 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/FreeS777/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/FreeS777/frontend-project-lvl1/actions)
-<<<<<<< HEAD
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://github.com/FreeS777/frontend-project-lvl1/actions)
 
-
-Brain games it's a simple cli game to install this one please use next command:
-```git clone```
-```npm install```
-```npm link```
-Next please choose one of the game
-Example game play:
-=======
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://github.com/FreeS777/frontend-project-lvl1)
-[![superlinter](https://github.com/FreeS777/frontend-project-lvl1/workflows/superlinter/badge.svg)](https://github.com/FreeS777/frontend-project-lvl1/actions)
 
 
 Brain games it's a simple cli game to install this one please use next command: <br>
@@ -21,7 +10,6 @@ Brain games it's a simple cli game to install this one please use next command: 
 ```npm link``` <br>
 Next please choose one of the game <br>
 Example game play: <br>
->>>>>>> ab5864f230d2e868fe2b52948d00363cd6f4d4ff
 
 link to asciinema, game: "Brain Even" https://asciinema.org/a/KLEG2ci4rINTma143orwhYdw8 <br>
 link to asciinema, game: "Brain Calc" https://asciinema.org/a/S8TvK3T8kMjHLOsyz6zeis7Bo <br>
