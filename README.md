@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/FreeS777/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/FreeS777/frontend-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://github.com/FreeS777/frontend-project-lvl1/actions)
 [![superlinter](https://github.com/FreeS777/frontend-project-lvl1/workflows/superlinter/badge.svg)](https://github.com/FreeS777/frontend-project-lvl1/actions)
 
 
