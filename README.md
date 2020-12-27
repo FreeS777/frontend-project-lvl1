@@ -1,6 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/FreeS777/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/FreeS777/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/FreeS777/frontend-project-lvl1/)
+[![linter](https://github.com//FreeS777/frontend-project-lvl1/workflows/linter/badge.svg)](https://github.com/FreeS777/frontend-project-lvl1/actions)
 
 Brain games it's a simple cli game to install this one please use next command: <br>
 ```git clone``` <br>
