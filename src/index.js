@@ -1,3 +1,4 @@
+import readlineSync from 'readline-sync';
 import { userName } from './cli.js';
 
 export const randomNumber = (minValue = 1, maxValue = 101) => {
@@ -17,3 +18,19 @@ export const isWrongAnswer = (userAnswer, correctAnswer) => {
   return console.log(message);
 };
 export const congratulations = () => console.log(`Congratulations, ${userName}!`);
+
+export default (generateQuestionAnswer) => {
+  let counter = 0;
+  while (counter < 3) {
+    const [question, correctAnswer] = generateQuestionAnswer();
+    const userAnswer = readlineSync.question(question);
+    if (userAnswer === correctAnswer) {
+      counter += 1;
+      isCorrectAnswer();
+    } else {
+      isWrongAnswer(userAnswer, correctAnswer);
+      return;
+    }
+  }
+  congratulations();
+};
