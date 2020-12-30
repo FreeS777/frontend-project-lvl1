@@ -19,4 +19,4 @@ jobs:
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:
-          hexlet-id: ${{ secrets.11936 }}
+          hexlet-id: ${{ 11936 }}

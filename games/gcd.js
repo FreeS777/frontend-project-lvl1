@@ -1,5 +1,6 @@
 import gameProcess, { randomNumber } from '../src/index.js';
 
+export const getRulesGcdGame = () => console.log('Find the greatest common divisor of given numbers.');
 const getGcdCorrectAnswer = (numberOne, numberTwo) => {
   let result = 0;
   let tempOne = numberOne;

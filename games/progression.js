@@ -1,8 +1,7 @@
 /* eslint-disable no-restricted-syntax */
-import readlineSync from 'readline-sync';
-import {
-  randomNumber, isWrongAnswer, isCorrectAnswer, congratulations,
-} from '../src/index.js';
+import gameProcess, { randomNumber } from '../src/index.js';
+
+export const isRulesProgressGame = () => console.log('What number is missing in the progression?');
 
 export const getRandomProgression = () => {
   let count = 0;
@@ -18,7 +17,7 @@ export const getRandomProgression = () => {
   return randomProgression;
 };
 
-export const getHiddenProgression = (progression, hiddenIndex) => {
+export const getProgressionQuestion = (progression, hiddenIndex) => {
   const hiddenElement = progression[hiddenIndex];
   let resultArr = [];
   for (const value of progression) {
@@ -32,21 +31,13 @@ export const getHiddenProgression = (progression, hiddenIndex) => {
   return resultArr;
 };
 
-export default () => {
-  let count = 0;
-  while (count < 3) {
-    const questionProgression = getRandomProgression();
-    const hiddenIndex = randomNumber(0, questionProgression.length - 1);
-    const questionGame = getHiddenProgression(questionProgression, hiddenIndex);
-    const userAnswer = readlineSync.question(`Question: ${questionGame}\nYour answer: `);
-    const CorrectAnswer = questionProgression[hiddenIndex];
-    if (userAnswer === String(CorrectAnswer)) {
-      count += 1;
-      isCorrectAnswer();
-    } else {
-      isWrongAnswer(userAnswer, CorrectAnswer);
-      return;
-    }
-  }
-  congratulations();
+const generateQuestionAnswer = () => {
+  const questionProgression = getRandomProgression();
+  const hiddenIndex = randomNumber(0, questionProgression.length - 1);
+  const questionGame = getProgressionQuestion(questionProgression, hiddenIndex);
+  const question = `Question: ${questionGame}\nYour answer: `;
+  const correctAnswer = String(questionProgression[hiddenIndex]);
+  return [question, correctAnswer];
 };
+
+export default () => gameProcess(generateQuestionAnswer);

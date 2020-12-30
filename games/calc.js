@@ -1,7 +1,6 @@
-import readlineSync from 'readline-sync';
-import {
-  randomNumber, isWrongAnswer, isCorrectAnswer, congratulations,
-} from '../src/index.js';
+import gameProcess, { randomNumber } from '../src/index.js';
+
+export const isRulesCalcGame = () => console.log('Whate is the result of the expression?');
 
 const getCalcCorrectAnswer = (firstValue, secondValue, symbol) => {
   let result = 0;
@@ -27,23 +26,13 @@ const randomSymbolCalc = () => {
   }
   return symbol;
 };
-
-export default () => {
-  let counter = 0;
-  while (counter < 3) {
-    const randomNumberOne = randomNumber();
-    const randomNumberTwo = randomNumber();
-    const symbol = randomSymbolCalc();
-    const userAnswer = readlineSync.question(`Question: ${randomNumberOne} ${symbol} ${randomNumberTwo}\nYour answer: `);
-    const correctAnswer = getCalcCorrectAnswer(randomNumberOne, randomNumberTwo, symbol);
-
-    if (String(correctAnswer) === userAnswer) {
-      counter += 1;
-      isCorrectAnswer();
-    } else {
-      isWrongAnswer(userAnswer, correctAnswer);
-      return;
-    }
-  }
-  congratulations();
+const generateQuestionAnswer =() => {
+  const numberOne = randomNumber();
+  const numberTwo = randomNumber();
+  const symbol = randomSymbolCalc();
+  const question = `Question: ${numberOne} ${symbol} ${numberTwo}\nYour answer: `;
+  const correctAnswer = String(getCalcCorrectAnswer(numberOne, numberTwo, symbol));
+  return [question, correctAnswer];
 };
+
+export default () => gameProcess(generateQuestionAnswer);

@@ -1,7 +1,6 @@
-import readlineSync from 'readline-sync';
-import {
-  randomNumber, congratulations, isWrongAnswer, isCorrectAnswer,
-} from '../src/index.js';
+import gameProcess, { randomNumber } from '../src/index.js';
+
+export const isRulesEvenGame = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const isEven = (num) => {
   if (num % 2 === 0) {
@@ -10,20 +9,11 @@ const isEven = (num) => {
   return 'no';
 };
 
-export default () => {
-  let counter = 0;
-  while (counter < 3) {
-    const questionNumber = randomNumber();
-    const correctAnswer = isEven(questionNumber);
-    console.log(`Question: ${questionNumber}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (correctAnswer === userAnswer) {
-      counter += 1;
-      isCorrectAnswer();
-    } else {
-      isWrongAnswer(userAnswer, correctAnswer);
-      return;
-    }
-  }
-  congratulations();
+const generateQuestionAnswer = () => {
+  const questionNumber = randomNumber();
+  const question = `Question: ${questionNumber}\nYour answer: `;
+  const correctAnswer = isEven(questionNumber);
+  return [question, correctAnswer];
 };
+
+export default () => gameProcess(generateQuestionAnswer);

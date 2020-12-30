@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import { sayWelcome, sayHi } from '../src/cli.js';
-import brainGcdGame from '../games/gcd.js';
-import { isRulesGcdGame } from '../src/index.js';
+import brainGcdGame, { getRulesGcdGame } from '../games/gcd.js';
 
 sayWelcome();
 sayHi();
-isRulesGcdGame();
+getRulesGcdGame();
 brainGcdGame();
