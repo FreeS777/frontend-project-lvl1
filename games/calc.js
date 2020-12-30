@@ -26,7 +26,7 @@ const randomSymbolCalc = () => {
   }
   return symbol;
 };
-const generateQuestionAnswer =() => {
+const generateQuestionAnswer = () => {
   const numberOne = randomNumber();
   const numberTwo = randomNumber();
   const symbol = randomSymbolCalc();
