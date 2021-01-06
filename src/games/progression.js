@@ -15,7 +15,7 @@ const getRandomProgression = () => {
   return randomProgression;
 };
 
-export const getProgressionQuestion = (progression, hiddenIndex) => {
+export const progressionWithHiddenElement = (progression, hiddenIndex) => {
   const hiddenElement = progression[hiddenIndex];
   let resultArr = [];
   progression.forEach((value) => {
@@ -32,7 +32,7 @@ export const getProgressionQuestion = (progression, hiddenIndex) => {
 const generateQuestionAnswer = () => {
   const questionProgression = getRandomProgression();
   const hiddenIndex = getRandomNumber(0, questionProgression.length - 1);
-  const questionGame = getProgressionQuestion(questionProgression, hiddenIndex);
+  const questionGame = progressionWithHiddenElement(questionProgression, hiddenIndex);
   const question = `Question: ${questionGame}\nYour answer: `;
   const correctAnswer = String(questionProgression[hiddenIndex]);
   return [question, correctAnswer];

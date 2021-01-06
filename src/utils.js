@@ -4,8 +4,8 @@ export default (minValue = 1, maxValue = 101) => {
 };
 
 export const isPrime = (num) => {
-  for (let i = 2, a = Math.sqrt(num); i <= a; i += 1) {
-    if (num % i === 0) return false;
+  for (let count = 2; count <= Math.sqrt(num); count += 1) {
+    if (num % count === 0) return false;
   }
   return true;
 };

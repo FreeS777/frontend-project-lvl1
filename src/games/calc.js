@@ -1,7 +1,7 @@
 import gameProcess from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const getCalcCorrectAnswer = (firstValue, secondValue, symbol) => {
+const getOperation = (firstValue, secondValue, symbol) => {
   let result;
   if (symbol === '+') {
     result = firstValue + secondValue;
@@ -13,7 +13,7 @@ const getCalcCorrectAnswer = (firstValue, secondValue, symbol) => {
   return result;
 };
 
-const randomSymbolCalc = () => {
+const getRandomOperation = () => {
   const arr = ['+', '-', '*'];
   const randomSymbol = Math.floor(Math.random() * arr.length);
   return arr[randomSymbol];
@@ -22,9 +22,9 @@ const randomSymbolCalc = () => {
 const generateQuestionAnswer = () => {
   const numberOne = getRandomNumber();
   const numberTwo = getRandomNumber();
-  const symbol = randomSymbolCalc();
+  const symbol = getRandomOperation();
   const question = `Question: ${numberOne} ${symbol} ${numberTwo}\nYour answer: `;
-  const correctAnswer = String(getCalcCorrectAnswer(numberOne, numberTwo, symbol));
+  const correctAnswer = String(getOperation(numberOne, numberTwo, symbol));
   return [question, correctAnswer];
 };
 
