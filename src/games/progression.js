@@ -1,5 +1,19 @@
 import gameProcess from '../index.js';
-import { getRandomNumber, getRandomProgression } from '../utils.js';
+import getRandomNumber from '../utils.js';
+
+const getRandomProgression = () => {
+  let count = 0;
+  const progressionLength = getRandomNumber(5, 10);
+  let startValue = getRandomNumber();
+  const randomProgression = [startValue];
+  const progressionStep = getRandomNumber(1, 9);
+  while (count < progressionLength - 1) {
+    count += 1;
+    startValue += progressionStep;
+    randomProgression.push(startValue);
+  }
+  return randomProgression;
+};
 
 export const getProgressionQuestion = (progression, hiddenIndex) => {
   const hiddenElement = progression[hiddenIndex];
