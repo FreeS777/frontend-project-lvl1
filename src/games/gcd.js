@@ -1,6 +1,6 @@
-import gameProcess, { randomNumber } from '../src/index.js';
+import gameProcess from '../index.js';
+import getRandomNumber from '../utils.js';
 
-export const getRulesGcdGame = () => console.log('Find the greatest common divisor of given numbers.');
 const getGcdCorrectAnswer = (numberOne, numberTwo) => {
   let result = 0;
   let tempOne = numberOne;
@@ -17,11 +17,14 @@ const getGcdCorrectAnswer = (numberOne, numberTwo) => {
 };
 
 const generateQuestionAnswer = () => {
-  const numberOne = randomNumber();
-  const numberTwo = randomNumber();
+  const numberOne = getRandomNumber();
+  const numberTwo = getRandomNumber();
   const question = `Question: ${numberOne} ${numberTwo}\nYour answer: `;
   const correctAnswer = String(getGcdCorrectAnswer(numberOne, numberTwo));
   return [question, correctAnswer];
 };
 
-export default () => gameProcess(generateQuestionAnswer);
+export default () => {
+  console.log('Find the greatest common divisor of given numbers.');
+  gameProcess(generateQuestionAnswer);
+};

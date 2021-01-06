@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-import { sayWelcome, sayHi } from '../src/cli.js';
-import brainEvenGame, { isRulesEvenGame } from '../games/even.js';
+import brainEvenGame from '../src/games/even.js';
 
-sayWelcome();
-sayHi();
-isRulesEvenGame();
 brainEvenGame();

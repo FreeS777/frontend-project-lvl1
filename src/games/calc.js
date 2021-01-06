@@ -1,9 +1,8 @@
-import gameProcess, { randomNumber } from '../src/index.js';
-
-export const isRulesCalcGame = () => console.log('Whate is the result of the expression?');
+import gameProcess from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getCalcCorrectAnswer = (firstValue, secondValue, symbol) => {
-  let result = 0;
+  let result;
   if (symbol === '+') {
     result = firstValue + secondValue;
   } else if (symbol === '-') {
@@ -15,24 +14,21 @@ const getCalcCorrectAnswer = (firstValue, secondValue, symbol) => {
 };
 
 const randomSymbolCalc = () => {
-  let symbol = '';
-  const random = Math.random();
-  if (random <= 0.33) {
-    symbol = '+';
-  } else if (random > 0.33 && random <= 0.66) {
-    symbol = '-';
-  } else {
-    symbol = '*';
-  }
-  return symbol;
+  const arr = ['+', '-', '*'];
+  const randomSymbol = Math.floor(Math.random() * arr.length);
+  return arr[randomSymbol];
 };
+
 const generateQuestionAnswer = () => {
-  const numberOne = randomNumber();
-  const numberTwo = randomNumber();
+  const numberOne = getRandomNumber();
+  const numberTwo = getRandomNumber();
   const symbol = randomSymbolCalc();
   const question = `Question: ${numberOne} ${symbol} ${numberTwo}\nYour answer: `;
   const correctAnswer = String(getCalcCorrectAnswer(numberOne, numberTwo, symbol));
   return [question, correctAnswer];
 };
 
-export default () => gameProcess(generateQuestionAnswer);
+export default () => {
+  console.log('Whate is the result of the expression?');
+  gameProcess(generateQuestionAnswer);
+};
