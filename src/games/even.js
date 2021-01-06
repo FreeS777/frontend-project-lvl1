@@ -1,5 +1,5 @@
 import gameProcess from '../index.js';
-import { getRandomNumber, isEven } from '../utils.js';
+import getRandomNumber, { isEven } from '../utils.js';
 
 const generateQuestionAnswer = () => {
   const questionNumber = getRandomNumber();
