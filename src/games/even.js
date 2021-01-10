@@ -1,5 +1,11 @@
 import gameProcess from '../index.js';
-import getRandomNumber, { isEven } from '../utils.js';
+import getRandomNumber from '../utils.js';
+
+const rules = () => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+};
+
+const isEven = (num) => num % 2 === 0;
 
 const generateQuestionAnswer = () => {
   const questionNumber = getRandomNumber();
@@ -9,6 +15,6 @@ const generateQuestionAnswer = () => {
 };
 
 export default () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  rules();
   gameProcess(generateQuestionAnswer);
 };

@@ -1,22 +1,29 @@
 import gameProcess from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const rules = () => {
+  console.log('Whate is the result of the expression?');
+};
+
 const getOperation = (firstValue, secondValue, symbol) => {
   let result;
-  if (symbol === '+') {
-    result = firstValue + secondValue;
-  } else if (symbol === '-') {
-    result = firstValue - secondValue;
-  } else {
-    result = firstValue * secondValue;
+  switch (symbol) {
+    case '+':
+      result = firstValue + secondValue;
+      break;
+    case '-':
+      result = firstValue - secondValue;
+      break;
+    default:
+      result = firstValue * secondValue;
+      break;
   }
   return result;
 };
 
 const getRandomOperation = () => {
   const arr = ['+', '-', '*'];
-  const randomSymbol = Math.floor(Math.random() * arr.length);
-  return arr[randomSymbol];
+  return arr[getRandomNumber(0, arr.length - 1)];
 };
 
 const generateQuestionAnswer = () => {
@@ -29,6 +36,6 @@ const generateQuestionAnswer = () => {
 };
 
 export default () => {
-  console.log('Whate is the result of the expression?');
+  rules();
   gameProcess(generateQuestionAnswer);
 };

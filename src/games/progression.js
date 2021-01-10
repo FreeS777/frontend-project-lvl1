@@ -1,6 +1,10 @@
 import gameProcess from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const rules = () => {
+  console.log('What number is missing in the progression?');
+};
+
 const getRandomProgression = () => {
   let count = 0;
   const progressionLength = getRandomNumber(5, 10);
@@ -39,6 +43,6 @@ const generateQuestionAnswer = () => {
 };
 
 export default () => {
-  console.log('What number is missing in the progression?');
+  rules();
   gameProcess(generateQuestionAnswer);
 };
