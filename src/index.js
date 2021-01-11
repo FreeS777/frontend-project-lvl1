@@ -1,7 +1,17 @@
 import readlineSync from 'readline-sync';
-import letsBegin from './cli.js';
 
-const userName = letsBegin();
+export const greeting = () => {
+  console.log('Welcome to the Brain Games!');
+};
+
+const getUserNameAndGreeting = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  return userName;
+};
+
+const userName = getUserNameAndGreeting();
 
 export default (generateQuestionAnswer) => {
   let counter = 0;
