@@ -1,10 +1,6 @@
 import gameProcess from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const rules = () => {
-  console.log('Whate is the result of the expression?');
-};
-
 const getOperation = (firstValue, secondValue, symbol) => {
   let result;
   switch (symbol) {
@@ -36,6 +32,5 @@ const generateQuestionAnswer = () => {
 };
 
 export default () => {
-  rules();
-  gameProcess(generateQuestionAnswer);
+  gameProcess(generateQuestionAnswer, 'Whate is the result of the expression?');
 };
