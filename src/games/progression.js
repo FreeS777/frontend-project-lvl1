@@ -1,6 +1,7 @@
 import gameProcess from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const rules = 'What number is missing in the progression?';
 const getRandomProgression = () => {
   let count = 0;
   const progressionLength = getRandomNumber(5, 10);
@@ -15,29 +16,29 @@ const getRandomProgression = () => {
   return randomProgression;
 };
 
-export const progressionWithHiddenElement = (progression, hiddenIndex) => {
+export const getProgressionWithHiddenElement = (progression, hiddenIndex) => {
   const hiddenElement = progression[hiddenIndex];
-  let resultArr = [];
+  let result = [];
   progression.forEach((value) => {
     if (value === hiddenElement) {
-      resultArr.push('..');
+      result.push('..');
     } else {
-      resultArr.push(value);
+      result.push(value);
     }
   });
-  resultArr = resultArr.join(' ');
-  return resultArr;
+  result = result.join(' ');
+  return result;
 };
 
 const generateQuestionAnswer = () => {
   const questionProgression = getRandomProgression();
   const hiddenIndex = getRandomNumber(0, questionProgression.length - 1);
-  const questionGame = progressionWithHiddenElement(questionProgression, hiddenIndex);
+  const questionGame = getProgressionWithHiddenElement(questionProgression, hiddenIndex);
   const question = `Question: ${questionGame}\nYour answer: `;
   const correctAnswer = String(questionProgression[hiddenIndex]);
   return [question, correctAnswer];
 };
 
 export default () => {
-  gameProcess(generateQuestionAnswer, 'What number is missing in the progression?');
+  gameProcess(generateQuestionAnswer, rules);
 };
