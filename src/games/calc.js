@@ -12,9 +12,8 @@ const actions = {
 const calc = (firstNumber, secondNumber, action) => {
   if (actions[action]) {
     return actions[action](firstNumber, secondNumber);
-  } else {
-    throw new Error(`Unknown action: ${action}`);
   }
+  throw new Error(`Unknown action: ${action}`);
 };
 
 const getQuesionAndAnswer = () => {

@@ -6,9 +6,8 @@ const rules = 'Find the greatest common divisor of given numbers.';
 const getGcd = (firstNumber, secondNumber) => {
   if (secondNumber === 0) {
     return firstNumber;
-  } else {
-    return getGcd(secondNumber, firstNumber % secondNumber);
   }
+  return getGcd(secondNumber, firstNumber % secondNumber);
 };
 
 const getQuesionAndAnswer = () => {
