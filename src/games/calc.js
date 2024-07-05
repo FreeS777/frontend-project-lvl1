@@ -1,5 +1,5 @@
 import getRandomNumber from "../../src/utils.js";
-import gameEngine from "../engine.js";
+import gameEngine from "../index.js";
 
 const rules = `What is the result of the expression?`;
 
