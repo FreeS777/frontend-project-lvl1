@@ -8,14 +8,12 @@ export default (getQuesionAndAnswer, rules) => {
   const userName = getUserName();
   console.log(`Hello, ${userName}!`);
   console.log(rules);
-  let count = 0;
-  while (count < numberOfRounds) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const [question, answer] = getQuesionAndAnswer();
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === answer) {
       console.log('Correct!');
-      count += 1;
     } else {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`,

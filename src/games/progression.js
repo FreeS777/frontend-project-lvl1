@@ -11,14 +11,19 @@ const getProgression = () => {
   for (let i = 0; i < length; i += 1) {
     progression.push(firstNumber + step * i);
   }
-  const randomIndex = getRandomNumber(0, length - 1);
+  return progression;
+};
+
+const getQuestion = () => {
+  const progression = getProgression();
+  const randomIndex = getRandomNumber(0, progression.length - 1);
   const missingNumber = progression[randomIndex];
   progression[randomIndex] = '..';
   return [progression, missingNumber];
 };
 
 const getQuesionAndAnswer = () => {
-  const [progression, missingNumber] = getProgression();
+  const [progression, missingNumber] = getQuestion();
   const question = `Question: ${progression.join(' ')}`;
   const answer = String(missingNumber);
   return [question, answer];
